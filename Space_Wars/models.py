@@ -23,7 +23,7 @@ class gameObject():
         return distance < self.radius + other_obj.radius
 
 class spaceShip(gameObject):
-    MANEUVERABILITY = 15 #amount of rotation at once
+    MANEUVERABILITY = 12 #amount of rotation at once
     ACCELERATION = 5
     BULLET_SPEED = 3
     def __init__(self, position, create_callback):
@@ -66,7 +66,7 @@ class spaceShip(gameObject):
 class Asteroid(gameObject):
     def __init__(self, position):
 
-        super().__init__(position, load_sprite("asteroid",True), get_random_velocity(1,3))
+        super().__init__(position, load_sprite("asteroid",True), get_random_velocity(1,4))
 
 class Bullet(gameObject):
     def __init__(self, position, velocity):

@@ -15,7 +15,7 @@ class SpaceWars():
         self.time = 0
         self.fps = pygame.time.Clock()
         self.window = pygame.display.set_mode((self.Width,self.Height),0,32)
-        self.font = pygame.font.Font(None, 64)
+        self.font = pygame.font.Font(None, 100)
         self.message = ""
 
         #loading sprites
@@ -38,7 +38,9 @@ class SpaceWars():
 
             self.asteroids.append(Asteroid(position))
 
-
+    def title_loop(self):
+        #TO-DO = Add title screen
+        pass
 
     def main_loop(self):
         while True:
@@ -92,7 +94,7 @@ class SpaceWars():
                     self.message = "You Lost!"
                     break
 
-        if not self.asteroids and self.spaceship:
+        if not self.asteroids and self.ship:
             self.message = "You Won!"
         
         for bullet in self.bullets[:]:
